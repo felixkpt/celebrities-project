@@ -51,7 +51,7 @@ class GoogleController extends Controller
 
             return redirect()->route('home');
         } catch (\Throwable $th) {
-            throw $th;
+            return redirect()->route('login')->with('danger', 'Error logging you in, try again.');
         }
     }
 }

@@ -40,7 +40,7 @@ if ($temp) {
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <!-- Item 1 -->
             <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-            <div class="flex absolute duration-1000 top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+            <div class="flex justify-between absolute duration-1000 top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
                 @foreach ($item_seg as $item)
                 <img src="{{ asset($item->image) }}" class="bg-red-200" alt="...">
                 @endforeach

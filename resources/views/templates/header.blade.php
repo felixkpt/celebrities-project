@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ $description ?? \SiteInfo::description() }}">
     <title>{{ $title ?? \SiteInfo::title() }}</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/style.css?v=').date('Y.m.d-H:i:s') }}">
     <script src="{{ asset('js/script.js?v=').Str::random(10) }}" async></script>
     <script src="{{ asset('js/flowbite.js') }}"></script>

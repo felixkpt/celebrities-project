@@ -1,0 +1,6 @@
+.note-editor .note-toolbar .note-dropdown-menu {
+    min-width: 180px!important
+}
+.note-editor .note-editing-area .note-editable {
+    background-color: #fff;
+}

@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+element.style {}
+
+.w-full {
+    width:100%;
+}
+
+[type='text'],
+[type='checkbox'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[multiple],
+textarea,
+select {
+    @apply border-gray-400;
+    border-radius:5px;
+    outline:none;
+}
+
+main {
+    min-height:1000px;
+}
+
+footer {
+    min-height:220px;
+}
+
+h1 {
+    @apply text-4xl my-4 rounded-sm font-medium text-gray-800;
+}
+
+h2 {
+    @apply text-3xl my-3 rounded-sm font-medium text-gray-700;
+}
+
+h3 {
+    @apply text-2xl my-2 rounded-sm font-medium text-gray-700;
+}
+
+h4 {
+    @apply text-xl my-1 rounded-sm font-medium text-gray-700;
+}
+
+h5 {
+    @apply text-lg my-1 rounded-sm font-medium text-gray-700;
+}
+
+h6 {
+    @apply text-base my-1 rounded-sm font-medium text-gray-700;
+}
+
+.img-fadein {
+    @apply transition ease-in-out delay-150 duration-1000 hover:scale-125;
+}
+
+.basic-input {
+    @apply block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none;
+}
+
+.basic-textarea {
+    @apply block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+}
+
+.sidebar-link {
+    @apply border-l-4 border-t border-b border-r border-gray-500 hover:border-sky-500;
+}
+
+#left-nav-menu .active {
+    @apply bg-blue-400 text-white;
+}
+
+#primary-nav .active {
+    @apply bg-blue-700 md:bg-transparent text-gray-100 block pl-3 pr-4 py-2 md:p-0 rounded focus:outline-none;
+}
+
+.link-gray {
+    @apply text-gray-300 hover:text-gray-500;
+}
+
+.link-default {
+    @apply text-sky-500 hover:text-blue-700;
+}
+
+.link-dark {
+    @apply text-gray-600 hover:text-gray-900;
+}
+
+.link-green {
+    @apply hover:text-green-600;
+    color:#20b23d;
+}
+
+.link-yellow {
+    @apply text-yellow-700 hover:text-yellow-500;
+}
+
+@media (max-width:280px) {
+    .nav-brand-title {
+        @apply text-base;
+    }
+}
+
+@media(max-width:768px) {
+    nav #topNav #links a:hover {
+        border-left:1px solid lightslategray;
+        padding-left:3px;
+    }
+}
+
+#links .nav-item {
+    @apply block md:inline p-1 md:py-1 text-teal-200 hover:text-white md:mr-4;
+}
+
+.button-default {
+    @apply inline-block text-sm px-4 py-2 mt-4 md:mt-0 rounded border transition ease-in-out duration-700 text-white border-white bg-blue-600 hover:border-transparent hover:bg-blue-700;
+}
+
+.register-button {
+    @apply inline-block text-sm px-4 py-2 mt-4 md:mt-0 rounded border transition ease-in-out duration-700 text-white border-white bg-blue-600 hover:border-transparent hover:bg-blue-700;
+}
+
+.login-button {
+    @apply inline-block text-sm px-4 py-2 mt-4 md:mt-0 rounded border transition ease-in-out duration-700 bg-gray-100 border-white text-sky-400 hover:bg-gray-500 hover:text-white mt-4 md:mt-0;
+}
+
+.logout-button {
+    @apply inline-block text-sm px-4 py-2 mt-4 md:mt-0 rounded border transition ease-in-out duration-700 bg-gray-100 border-white text-sky-400 hover:bg-gray-500 hover:text-white mt-4 md:mt-0
+}

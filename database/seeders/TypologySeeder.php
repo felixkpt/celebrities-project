@@ -24,27 +24,26 @@ class TypologySeeder extends Seeder
         $this->faker = Factory::create();
         DB::table('typologies')->truncate();
         
-        $featured_image = 'uploads/images/typologies/default.png';
-
         $personalities = [
-        ['name' => 'ISTJ', 'slug' => 'istj', 'strength' => 'Inspector', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ISTP', 'slug' => 'istp', 'strength' => 'Crafter', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ISFJ', 'slug' => 'isfj', 'strength' => 'Protector', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ISFP', 'slug' => 'isfp', 'strength' => 'Artist', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'INFJ', 'slug' => 'infj', 'strength' => 'Advocate', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'INFP', 'slug' => 'infp', 'strength' => 'Mediator', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'INTJ', 'slug' => 'intj', 'strength' => 'Architect', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'INTP', 'slug' => 'intp', 'strength' => 'Thinker', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image],
-        ['name' => 'ESTP', 'slug' => 'estp', 'strength' => 'Persuader', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ESTJ', 'slug' => 'estj', 'strength' => 'Director', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ESFP', 'slug' => 'esfp', 'strength' => 'Performer', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ESFJ', 'slug' => 'esfj', 'strength' => 'Caregiver', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ENFP', 'slug' => 'enfp', 'strength' => 'Champion', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ENFJ', 'slug' => 'enfj', 'strength' => 'Giver', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ENTP', 'slug' => 'entp', 'strength' => 'Debater', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image], 
-        ['name' => 'ENTJ', 'slug' => 'entj', 'strength' => 'Commander', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15), 'featured_image' => $featured_image],];
+        ['name' => 'ISTJ', 'slug' => 'istj', 'strength' => 'Inspector', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ISTP', 'slug' => 'istp', 'strength' => 'Crafter', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ISFJ', 'slug' => 'isfj', 'strength' => 'Protector', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ISFP', 'slug' => 'isfp', 'strength' => 'Artist', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'INFJ', 'slug' => 'infj', 'strength' => 'Advocate', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'INFP', 'slug' => 'infp', 'strength' => 'Mediator', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'INTJ', 'slug' => 'intj', 'strength' => 'Architect', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'INTP', 'slug' => 'intp', 'strength' => 'Thinker', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)],
+        ['name' => 'ESTP', 'slug' => 'estp', 'strength' => 'Persuader', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ESTJ', 'slug' => 'estj', 'strength' => 'Director', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ESFP', 'slug' => 'esfp', 'strength' => 'Performer', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ESFJ', 'slug' => 'esfj', 'strength' => 'Caregiver', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ENFP', 'slug' => 'enfp', 'strength' => 'Champion', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ENFJ', 'slug' => 'enfj', 'strength' => 'Giver', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ENTP', 'slug' => 'entp', 'strength' => 'Debater', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
+        ['name' => 'ENTJ', 'slug' => 'entj', 'strength' => 'Commander', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)],];
         
         foreach ($personalities as $personality) {
+            $personality['featured_image'] = 'images/typologies/'.strtolower($personality['name']).'.jpg';
             Typology::create($personality); 
         }
 

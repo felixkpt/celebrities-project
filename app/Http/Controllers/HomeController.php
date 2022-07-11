@@ -16,6 +16,6 @@ class HomeController extends Controller
         $title = SiteInfo::title();
         $description = SiteInfo::description();
         $data = ['title' => $title, 'description' => $description, 'personalities' => $personalities, 'people' => $people];
-        return view('home', $data);
+        return view('home/index', $data);
     }
 }

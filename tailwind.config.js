@@ -1,13 +1,22 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
-module.exports = {
-    content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
-        "./node_modules/flowbite/**/*.js",
-    ],
+const isAdmin = process.argv.includes('--admin')
 
+let content = [
+    './resources/views/**/*.blade.php',
+]
+if (isAdmin) {
+    content = [
+        './resources/views/admin/**/*.blade.php',
+    ]
+}
+
+module.exports = {
+    content: [...content,
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        "./node_modules/flowbite/**/*.js",
+    ]
+    ,
     theme: {
         extend: {
             fontFamily: {
@@ -20,11 +29,10 @@ module.exports = {
             //   DEFAULT: '0',
             //   md: '0',
             // },
-          },
+        },
     },
 
     plugins: [
-        require('@tailwindcss/forms'),
         require('flowbite/plugin')
     ],
     darkMode: false

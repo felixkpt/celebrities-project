@@ -8,8 +8,8 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "build:css": "npx tailwindcss -i src/style.css -o public/css/style.css --watch",
-        "build:css.admin": "npx tailwindcss -i src/admin/style.css -o public/admin/css/style.css --watch"
+        "tailwindcss": "npx tailwindcss -i src/style.css -o public/css/style.css --watch --frontend",
+        "tailwindcss-admin": "npx tailwindcss -i src/admin/style.css -o public/admin/css/style.css --watch --admin"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.4.0",

@@ -17,7 +17,8 @@ class CitySeeder extends Seeder
         require 'all-cities.php';
         // var_dump($cities_array[0]);die;
         $min = City::count();
-        $totals = count($cities_array);
+        $totals = count($cities_array); // 113530
+        // dd($totals);
         for($i=0; $i<$totals; $i++) {
 
             if ($i + 1 > $min) {

@@ -1,7 +1,7 @@
 @include('/templates/header')
 <div class="flex flex-col">
     <div class="w-full">
-        @include('/people/components/popular-people')
+        @include('/home/slider')
     </div>
     <div class="w-full rounded-lg mt-12">
         <h2 class="flex justify-between w-full">People born this month <a class="text-center rounded-lg transition ease-in-out duration-1000 p-2 text-xl link-default" href="{{ url('birthdays/month/'.date('m')) }}">Birthdays this month</a></h2>

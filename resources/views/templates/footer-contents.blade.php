@@ -66,8 +66,6 @@
                                         </li>
                                 </ul>
                         </div>
-
-
                 </div>
                 <div class="py-6 px-4 bg-[#302a4c] md:flex md:items-center md:justify-between">
                         <span class="text-sm text-gray-300 sm:text-center">© 2022 <a href="{{ route('home') }}">{{ \SiteInfo::name() }}</a>. All Rights Reserved. </span>

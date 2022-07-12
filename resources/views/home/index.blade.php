@@ -9,8 +9,8 @@
     </div>
     <div class="flex flex-wrap w-full border-top rounded-lg">
         <h2 class="flex justify-between w-full">Typologies by Mayers Briggs <a class="text-center rounded-lg transition ease-in-out duration-1000 p-2 text-xl link-default" href="{{ url('typologies') }}">View all typologies</a></h2>
-        <div class="flex flex-wrap w-full rounded mt-4 py-2">
-            @include('/typologies/components/personality-card')
+        <div class="w-full">
+            @include('/home/mbti')
         </div>
     </div>
     <div class="flex flex-wrap w-full">

@@ -33,7 +33,19 @@ if ($temp) {
     $items_segments[] = $temp;
 }
 ?>
-<div id="default-carousel" class="relative" data-carousel="slide">
+<style>
+    .img-overlay {
+        background-color: #5b3c6052;
+        color: #e5e7eb;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+        display: inline;
+    }
+</style>
+<div id="popular-carousel" class="relative" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
         @foreach ($items_segments as $key => $item_seg)
@@ -41,8 +53,15 @@ if ($temp) {
             <!-- Item 1 -->
             <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
             <div class="flex justify-between absolute duration-1000 top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
-                @foreach ($item_seg as $item)
-                <img src="{{ asset($item->image) }}" class="bg-red-200" alt="...">
+                @foreach ($item_seg as $person)
+                <div style="min-width:300px">
+                <a class="w-full block overflow-hidden relative mx-auto" href="{{ url('professional/'.Str::slug($person->professional->slug)) }}">
+                    <img style="width:100%;object-fit:cover;" class="img-fadein mx-auto" src="{{ asset($person->image) }}" alt="{{ $person->first_name }}" title="{{ $person->first_name }}">
+                    <div class="img-overlay">
+                        <span>{{ $person->first_name.' '.$person->last_name }}</span>
+                    </div>
+                </a>
+                </div>
                 @endforeach
             </div>
         </div>

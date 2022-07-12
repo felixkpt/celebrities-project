@@ -213,7 +213,7 @@ class PersonController extends Controller
      * Fetcher method
      */
     public function fetcher(Request $request) {
-        $total_cities = 113529;
+        $total_cities = 113530;
         if (City::count() < $total_cities) {
             return redirect()->back()->with('danger', 'Please run cities seeder first.');
         }

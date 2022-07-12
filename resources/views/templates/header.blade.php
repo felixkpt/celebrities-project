@@ -44,8 +44,8 @@
                 <hr class="border-t border-gray-400">
             </div>
             @if(!isset($notification_type) || $notification_type != 'none')
-            @include('/components/notifications/toast')
             @if(isset($notification_type) && $notification_type == 'toast')
+            @include('/components/notifications/toast')
             @else
             @include('/components/notifications/inline')
             @endif

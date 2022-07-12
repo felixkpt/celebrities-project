@@ -45,6 +45,7 @@ if ($temp) {
         display: inline;
     }
 </style>
+<h2>Trending personalities</h2>
 <div id="popular-carousel" class="relative" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
@@ -55,12 +56,12 @@ if ($temp) {
             <div class="flex justify-between absolute duration-1000 top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
                 @foreach ($item_seg as $person)
                 <div style="min-width:300px">
-                <a class="w-full block overflow-hidden relative mx-auto" href="{{ url('professional/'.Str::slug($person->professional->slug)) }}">
-                    <img style="width:100%;object-fit:cover;" class="img-fadein mx-auto" src="{{ asset($person->image) }}" alt="{{ $person->first_name }}" title="{{ $person->first_name }}">
-                    <div class="img-overlay">
-                        <span>{{ $person->first_name.' '.$person->last_name }}</span>
-                    </div>
-                </a>
+                    <a class="w-full block overflow-hidden relative mx-auto" href="{{ url('people/'.$person->id.'/'.Str::slug($person->first_name.' '.$person->last_name, '-')) }}">
+                        <img style="width:100%;object-fit:cover;" class="img-fadein mx-auto" src="{{ asset($person->image) }}" alt="{{ $person->first_name }}" title="{{ $person->first_name }}">
+                        <div class="img-overlay">
+                            <span>{{ $person->first_name.' '.$person->last_name }}</span>
+                        </div>
+                    </a>
                 </div>
                 @endforeach
             </div>

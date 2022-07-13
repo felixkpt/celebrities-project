@@ -32,6 +32,7 @@ class Person extends Model
         'favorite_quote',
         'description',
         'typology',
+        'enneagram',
         'image',
         'timezone',
         'timezone_description',

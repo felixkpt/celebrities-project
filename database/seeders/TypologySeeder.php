@@ -22,8 +22,7 @@ class TypologySeeder extends Seeder
     public function run()
     {
         $this->faker = Factory::create();
-        DB::table('typologies')->truncate();
-        
+       
         $personalities = [
         ['name' => 'ISTJ', 'slug' => 'istj', 'strength' => 'Inspector', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 
         ['name' => 'ISTP', 'slug' => 'istp', 'strength' => 'Crafter', 'description' => $this->faker->paragraph, 'prevalence' => $this->faker->numberBetween(5, 15)], 

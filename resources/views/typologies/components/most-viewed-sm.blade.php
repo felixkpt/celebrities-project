@@ -10,7 +10,7 @@ $personalities = App\Models\Typology::limit(5)->get();
             <a href="{{ url('typologies/'.$personality->slug) }}" class="flex items-center gap-1 hover:shadow p-1 link-secondary">
                 <div>
                     <div class="image-wrapper-sm">
-                        <img class="rounded" src="{{ asset($personality->featured_image) }}" alt="ISFP">
+                        <img class="rounded" src="{{ asset($personality->featured_image) }}" alt="{{ $personality->name }}">
                     </div>
                 </div>
                 <div>

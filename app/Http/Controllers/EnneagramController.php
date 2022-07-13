@@ -21,7 +21,7 @@ class EnneagramController extends Controller{
         }
 
         $people = Person::where('enneagram', '=', $enneagram->name)->limit(20)->inRandomOrder()->get();
-        $title = 'All about '. $enneagram->name.', The '.$enneagram->strength;
+        $title = 'All about '. $enneagram->name.', '.$enneagram->strength;
         $description = $title;
 
         $data = ['title' => $title, 'description' => $description, 'enneagram' => $enneagram, 'people' => $people];

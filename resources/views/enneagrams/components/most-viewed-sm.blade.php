@@ -15,7 +15,7 @@ $enneagrams = App\Models\Enneagram::limit(5)->get();
                 </div>
                 <div>
                     <h4 class="font-medium">{{ $enneagram->name }}</h4>
-                    <h5>The {{ $enneagram->strength }}</h5>
+                    <h5>{{ $enneagram->strength }}</h5>
                     <p>{{ Str::limit($enneagram->description, 50) }}</p>
                 </div>
             </a>

@@ -32,6 +32,7 @@ require __DIR__.'/web/authors.php';
 require __DIR__.'/web/google-auth.php';
 require __DIR__.'/web/contact.php';
 require __DIR__.'/web/professional.php';
+require __DIR__.'/web/enneagrams.php';
 
 require __DIR__.'/web/admin.php';
 

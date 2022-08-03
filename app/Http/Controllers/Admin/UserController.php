@@ -140,6 +140,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email,'.$id,
             'roles' => 'nullable|array'
         ];
+        
         if ($request->get('confirm-password')) {
             $rules['password'] = ['same:confirm-password'];
         }
@@ -168,6 +169,11 @@ class UserController extends Controller
         }
     
         $user = User::where(['is_active' => true, 'id' => $id])->first();
+
+        // Cannot change admin email
+        if ($user->email == 'admin@email.com') {
+            $input['email'] = 'admin@email.com';
+        }
 
         $user->update($input);
         DB::table('model_has_roles')->where('model_id', $id)->delete();

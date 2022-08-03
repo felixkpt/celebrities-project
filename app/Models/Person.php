@@ -56,4 +56,27 @@ class Person extends Model
     {
         return $this->belongsTo(Professional::class, 'professional_id');
     }
+
+
+    /**
+     * Authors relationship method
+     * 1 to many (One person_post can belong to one or more Authors)
+     */
+    public function author() {
+        return $this->belongsToMany(User::class, 'person_user', 'person_id', 'manager_id')
+        ->withTimestamps()
+        ->withPivot('manager_id')
+        ;
+    }
+
+    /**
+     * Authors relationship method
+     * 1 to many (One person_post can belong to one or more Authors)
+     */
+    public function authors() {
+        return $this->belongsToMany(User::class, 'person_user', 'person_id', 'user_id')
+        ->withTimestamps()
+        ->withPivot('manager_id')
+        ;
+    }
 }

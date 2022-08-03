@@ -16,7 +16,7 @@
                             {{ $user->name }}
                         </div>
                         <div class="flex-shrink-0 w-12 h-12">
-                            <img class="w-12 h-12 rounded-full" src="{{ asset($user->avatar ?? 'uploads/images/users/default.jpg') }}" alt="">
+                        <img class="w-12 h-12 rounded-full" src="{{ isset($user->avatar) ? $user->avatar : asset('images/default-user.png') }}" alt="">
                         </div>
                         <div class="text-sm text-gray-600" title="Email">{{ $user->email }}</div>
                     </div>

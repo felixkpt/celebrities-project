@@ -51,8 +51,8 @@ class PersonFetcher extends Command
         $person = new PersonController();
         $person->fetcher($request);
 
-        // echo $person;
-        
+        // echo $person; Ok
+
         $stop = preg_replace("/ ago/", "", \Carbon\Carbon::createFromTimeStamp(strtotime($start))->diffForHumans());
 
         $url = $this->nextUrl($url);

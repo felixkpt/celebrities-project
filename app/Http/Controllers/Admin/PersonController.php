@@ -330,6 +330,7 @@ class PersonController extends Controller
                 ])->first();
             }
             
+            // Everything looks fine
             if ($proceed && !$person) {
 
                 $fields = $bio;

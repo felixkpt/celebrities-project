@@ -50,7 +50,7 @@ class PersonController extends Controller
         'last_name' => 'max:30',
         'nickname' => 'max:30',
         'gender' => 'string',
-        'dob' => 'date',
+        'dob' => 'required|date',
         'county' => 'nullable|string|max:50',
         'state' => 'nullable|string|max:50',
         'city' => 'string|max:50',

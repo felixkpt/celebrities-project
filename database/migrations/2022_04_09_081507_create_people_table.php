@@ -38,6 +38,7 @@ return new class extends Migration
             $table->string('died_on')->nullable();
             $table->integer('views')->default(0);
             $table->string('last_view_ip', 100)->nullable();
+            $table->string('published', 30)->default('unpublished');
             $table->timestamps();
         });
     }

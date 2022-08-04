@@ -51,6 +51,17 @@ class Post extends Model
     }
 
     /**
+     * Main Authors relationship method
+     * 1 to many (One post can belong to one or more Authors)
+     */
+    public function mainAuthors() {
+        return $this->belongsToMany(User::class, 'post_user', 'post_id', 'user_id')
+        ->withTimestamps()
+        ->withPivot(['manager_id'])
+        ->using(\App\Models\PostUser::class);
+    }
+
+    /**
      * Category relationship method
      * 1 to many (One post can belong to one or more Categories)
      */
@@ -72,16 +83,6 @@ class Post extends Model
         return $this->hasOne(PostContent::class, 'post_id');
     }
 
-    /**
-     * Main Authors relationship method
-     * 1 to many (One post can belong to one or more Authors)
-     */
-    public function mainAuthors() {
-        return $this->belongsToMany(User::class, 'post_user', 'post_id', 'user_id')
-        ->withTimestamps()
-        ->withPivot(['manager_id'])
-        ->using(\App\Models\PostUser::class);
-    }
 
     /**
      * Defining relationship between post and review a post can have many reviews

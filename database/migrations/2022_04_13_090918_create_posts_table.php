@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->tinyText('description');
             $table->string('post_type', 20)->default('post');
-            $table->string('published', 20)->default('published');
+            $table->string('published', 30)->default('published');
             $table->string('image')->nullable();
             $table->integer('views')->default(0);
             $table->string('lats_view_ip', 100)->nullable();

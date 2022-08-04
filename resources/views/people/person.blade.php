@@ -6,7 +6,7 @@
     $personality = $person->personality;
     ?>
     @include('/people/components/personal-header')
-    <div class="w-full bg-fuchica-50 p-2 rounded-lg">
+    <div id="person-content" class="w-full bg-fuchica-50 p-2 rounded-lg">
         <div class="text-lg bg-white my-3">
             <div>
                 {!! $person->content->content !!}

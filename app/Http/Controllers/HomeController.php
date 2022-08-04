@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function index() {
         $personalities = Typology::orderby('strength')->limit(8)->get();
-        $people = Person::where('birth_month', date('m'))->limit(16)->inRandomOrder()->get();
+        $people = Person::where('published', 'published')->where('birth_month', date('m'))->limit(16)->inRandomOrder()->get();
         $title = SiteInfo::title();
         $description = SiteInfo::description();
         $data = ['title' => $title, 'description' => $description, 'personalities' => $personalities, 'people' => $people];

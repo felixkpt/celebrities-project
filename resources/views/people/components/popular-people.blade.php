@@ -1,6 +1,6 @@
 <?php 
 use App\Models\Person;
-$items = Person::latest()->limit(8)->get();
+$items = Person::where('published', 'published')->latest()->limit(8)->get();
 
 ?>
 <style>

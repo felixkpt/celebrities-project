@@ -2,7 +2,7 @@
 
 use App\Models\Person;
 
-$items = Person::latest()->limit(9)->get();
+$items = Person::where('published', 'published')->latest()->limit(9)->get();
 
 $items_segments = [];
 $max_segments = 3;

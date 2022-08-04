@@ -16,7 +16,7 @@ class PersonController extends Controller
      */
     public function index() {
         $perPage = $this->perPage;
-        $people = Person::orderby('updated_at', 'desc')->paginate($perPage);
+        $people = Person::where('published', 'published')->orderby('updated_at', 'desc')->paginate($perPage);
         $data = ['title' => 'Famous celebrities', 'description' => 'All Famous celebrities', 'people' => $people];
         return view('people/typologies/index', $data);
     }
@@ -27,7 +27,7 @@ class PersonController extends Controller
     public function show($slug) {
         $perPage = $this->perPage;  
         $typology = rtrim($slug, 's');
-        $people = Person::where('typology', '=', $typology)->orderby('updated_at', 'desc')->paginate($perPage);
+        $people = Person::where('published', 'published')->where('typology', '=', $typology)->orderby('updated_at', 'desc')->paginate($perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
@@ -42,7 +42,7 @@ class PersonController extends Controller
      * Showing people by typologies
      */
     public function typologies() {
-        $people = Person::all();
+        $people = Person::where('published', 'published')->get();
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
@@ -60,7 +60,7 @@ class PersonController extends Controller
             abort(404);
         }
 
-        $people = Person::where('typology', '=', $typology)->orderby('updated_at', 'desc')->paginate($perPage);
+        $people = Person::where('published', 'published')->where('typology', '=', $typology)->orderby('updated_at', 'desc')->paginate($perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
@@ -73,7 +73,7 @@ class PersonController extends Controller
      */
     public function person($id, $slug) {
         $this->updateTypology($id);
-        $person = Person::where([['id', '=', $id,], ['slug', '=', $slug]])->with('personality')->first();
+        $person = Person::where('published', 'published')->where([['id', '=', $id,], ['slug', '=', $slug]])->with('personality')->first();
         $vote = null;
         if (!$person) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
@@ -112,7 +112,7 @@ class PersonController extends Controller
         ->orderByRaw('count(*) desc')
         ->where('person_id', $id)->first();
         if ($choosen_typology) {
-            Person::where('id', $id)->update(['typology' => $choosen_typology->vote]);
+            Person::where('published', 'published')->where('id', $id)->update(['typology' => $choosen_typology->vote]);
         }
 
     }

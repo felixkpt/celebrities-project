@@ -316,7 +316,6 @@ class PersonController extends Controller
             $bio['enneagram'] = $enneagram;
 
             // Saving data
-
             $validation = Validator::make($bio, array_merge($this->rules, $this->rules2));
             // dd(count($validation->errors()->messages()), $bio['dob']);
             $proceed = false;

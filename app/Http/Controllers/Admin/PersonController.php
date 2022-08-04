@@ -17,7 +17,6 @@ use App\Models\Typology;
 use App\Models\User;
 use App\Models\Enneagram;
 use Exception;
-use Hamcrest\Arrays\IsArray;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -319,14 +318,19 @@ class PersonController extends Controller
             // Saving data
 
             $validation = Validator::make($bio, array_merge($this->rules, $this->rules2));
-            // dd(count($validation->errors()->messages()));
-            $person = Person::where([
-                ['first_name', '=', $bio['first_name']],
-                ['first_name', '=', $bio['first_name']],
-                ['city', '=', $bio['city']],
-                ['dob', '=', $bio['dob']]
-            ])->first();
-            if (!$person && count($validation->errors()->messages()) == 0) {
+            // dd(count($validation->errors()->messages()), $bio['dob']);
+            $proceed = false;
+            if (count($validation->errors()->messages()) == 0) {
+                $proceed = true;
+                $person = Person::where([
+                    ['first_name', '=', $bio['first_name']],
+                    ['first_name', '=', $bio['first_name']],
+                    ['city', '=', $bio['city']],
+                    ['dob', '=', $bio['dob']]
+                ])->first();
+            }
+            
+            if ($proceed && !$person) {
 
                 $fields = $bio;
                 $slug = Str::slug($bio['first_name'] . ' ' . $bio['last_name']);

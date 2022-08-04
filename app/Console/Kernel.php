@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('db:seed --class=CitySeeder')->everyTenMinutes();
-        $schedule->command('person:fetch')->everyFiveMinutes();
+        $schedule->command('person:fetch')->everyMinute();
         // $schedule->command('inspire')->hourly();
     }
 

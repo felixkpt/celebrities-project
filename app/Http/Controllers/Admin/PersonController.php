@@ -47,8 +47,8 @@ class PersonController extends Controller
     private $rules = [
         'title' => 'nullable|string|max:10',
         'first_name' => 'required|min:1|max:30',
-        'last_name' => 'max:30',
-        'nickname' => 'max:30',
+        'last_name' => 'max:50',
+        'nickname' => 'max:50',
         'gender' => 'string',
         'dob' => 'required|date',
         'county' => 'nullable|string|max:50',

@@ -19,8 +19,8 @@
                             #{{ $key + 1 }}
                             <span class="px-2 text-gray-600">{{ $personality->name }}</span>
                             </div>
-                            <div class="flex w-24 h-16 rounded">
-                                <img class="w-24 h-16 rounded" src="{{ asset($personality->featured_image) }}">
+                            <div class="flex w-32 h-32 rounded">
+                                <img class="w-32 h-32 rounded" src="{{ asset($personality->featured_image) }}">
                             </div>
                         </div>
                     </td>

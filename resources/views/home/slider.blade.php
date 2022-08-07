@@ -56,8 +56,8 @@ if ($temp) {
             <div class="flex justify-between absolute duration-1000 top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
                 @foreach ($item_seg as $person)
                 <div style="min-width:300px">
-                    <a class="w-full block overflow-hidden relative mx-auto" href="{{ url('people/'.$person->id.'/'.Str::slug($person->first_name.' '.$person->last_name, '-')) }}">
-                        <img style="width:100%;object-fit:cover;" class="img-fadein mx-auto" src="{{ asset($person->image) }}" alt="{{ $person->first_name }}" title="{{ $person->first_name }}">
+                    <a class="w-full h-full block overflow-hidden relative mx-auto" href="{{ url('people/'.$person->id.'/'.Str::slug($person->first_name.' '.$person->last_name, '-')) }}">
+                        <img class="w-full h-full img-fadein mx-auto" style="object-fit:cover;" src="{{ asset($person->image) }}" alt="{{ $person->first_name }}" title="{{ $person->first_name }}">
                         <div class="img-overlay">
                             <span>{{ $person->first_name.' '.$person->last_name }}</span>
                         </div>

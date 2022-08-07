@@ -88,11 +88,10 @@ class FamousSource
                     return $node->text();
             });
 
-            if (!$title) {
-                die("Person title missing for ".$url);
+            if ($title) {
+                $title = $title[0];
             }
 
-            $title = $title[0];
 
             //    var_dump($name, $title);die;
 

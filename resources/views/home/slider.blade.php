@@ -45,7 +45,6 @@ if ($temp) {
         display: inline;
     }
 </style>
-<h2>Trending personalities</h2>
 <div id="popular-carousel" class="relative" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">

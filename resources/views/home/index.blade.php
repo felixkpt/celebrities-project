@@ -1,10 +1,5 @@
 @include('/templates/header')
 <div class="flex flex-col">
-    <div class="w-full text-2xl">
-        <div class="mx-1">
-            {!! SiteInfo::description() !!}
-        </div>
-    </div>
     <div class="w-full">
         @include('/home/slider')
     </div>

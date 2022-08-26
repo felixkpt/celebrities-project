@@ -54,7 +54,7 @@ class PersonController extends Controller
         'county' => 'nullable|string|max:50',
         'state' => 'nullable|string|max:50',
         'city' => 'string|max:50',
-        'birth_place' => 'string|max:50',
+        'birth_place' => 'nullable|string|max:50',
         'birth_sign' => 'string|max:30',
         'country_code' => 'string|max:30',
         'professional' => 'string|max:30',

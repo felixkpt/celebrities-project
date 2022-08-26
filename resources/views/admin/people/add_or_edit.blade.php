@@ -142,7 +142,8 @@ use App\Models\Typology;
                         <input type="name" name="died_on" id="died_on" class="basic-input" value="{{ old('died_on') ?: @$person->died_on }}" placeholder="DD-MM-YYYY">
                     </div>
                 </div>
-
+                
+                <?php $image = isset($person) ? asset($person->image) : ''; ?>
                 @include('/admin/components/image_upload')
 
                 <button type="submit" class="

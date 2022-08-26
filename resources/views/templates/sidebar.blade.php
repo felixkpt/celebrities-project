@@ -1,7 +1,7 @@
 <div class="h-max-content">
     <div class="inset-0 overflow-x-hidden py-4 px-1 justify-between">
         @include('/posts/components/latest-sm')
-        @include('/typologies/components/most-viewed-sm')
+        @include('/mbti/components/most-viewed-sm')
         @include('/enneagrams/components/most-viewed-sm')
     </div>
     <script>

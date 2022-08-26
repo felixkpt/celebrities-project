@@ -21,11 +21,10 @@ use Illuminate\Http\Request;
 
 require __DIR__.'/auth.php';
 require __DIR__.'/web/home.php';
-require __DIR__.'/web/typologies.php';
+require __DIR__.'/web/mbti.php';
 require __DIR__.'/web/people.php';
 require __DIR__.'/web/countries.php';
 require __DIR__.'/web/birthdays.php';
-require __DIR__.'/web/timezones.php';
 require __DIR__.'/web/posts.php';
 require __DIR__.'/web/pages.php';
 require __DIR__.'/web/authors.php';

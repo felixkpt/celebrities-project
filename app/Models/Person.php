@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Typology;
+use App\Models\MBTI;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -44,7 +44,7 @@ class Person extends Model
 
     public function personality()
     {
-        return $this->belongsTo(Typology::class, 'typology', 'name');
+        return $this->belongsTo(MBTI::class, 'typology', 'name');
     }
 
     public function content()

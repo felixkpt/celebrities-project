@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Person;
-use App\Models\Typology;
+use App\Models\MBTI;
 use App\Settings\SiteInfo;
 class HomeController extends Controller
 {
@@ -11,7 +11,7 @@ class HomeController extends Controller
      * @return Response
      */
     public function index() {
-        $personalities = Typology::orderby('strength')->limit(8)->get();
+        $personalities = MBTI::orderby('strength')->limit(8)->get();
         $people = Person::where('published', 'published')->where('birth_month', date('m'))->limit(16)->inRandomOrder()->get();
         $title = SiteInfo::title();
         $description = SiteInfo::description();

@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TypologyVotes extends Model
+class MBTIVotes extends Model
 {
     use HasFactory;
+
+    protected $table = 'typology_votes';
     protected $fillable = [
         'user_id',
             'person_id',

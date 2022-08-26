@@ -6,7 +6,7 @@
         ?>
         <div class="bg-fuchsia-50 flex flex-col w-full p-2 overflow-hidden">
             <div class="relative mx-auto">
-                <a href="{{ url('typologies/'.$personality->slug) }}">
+                <a href="{{ url('mbti/'.$personality->slug) }}">
                     <div class="image-wrapper-md">
                         <img class="rounded img-fadein" src="{{ asset($personality->featured_image) }}" alt="ISFP">
                     </div>

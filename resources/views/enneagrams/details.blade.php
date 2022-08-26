@@ -1,6 +1,6 @@
 @include('/templates/header')
 <div class="flex flex-col w-full my-2">
-    <figure id="header-figure" class="w-full h-full lg:flex bg-fuchsia-50 rounded-xl overflow-hidden pt-8 pb-2">
+    <figure id="header-figure" class="w-full h-full lg:flex bg-fuchsia-50 rounded-xl overflow-hidden pt-8 pb-2 mb-6">
         <div class="md:h-4/5 md:w-1/4 overflow-hidden mx-auto">
             <div class="w-52 h-44 overflow-hidden mx-auto rounded">
                 <div style="width:200px;margin:auto">

@@ -21,7 +21,7 @@ class ProfessionalController extends Controller
         if (!$professional) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
-        $people = Person::where('professional_id', '=', $professional->id)->paginate($this->perPage);
+        $people = Person::where('published', 'published')->where('professional_id', '=', $professional->id)->paginate($this->perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! No people.');
         }

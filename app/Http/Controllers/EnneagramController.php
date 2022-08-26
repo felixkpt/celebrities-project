@@ -20,7 +20,7 @@ class EnneagramController extends Controller{
             abort(404);
         }
 
-        $people = Person::where('enneagram', '=', $enneagram->name)->limit(20)->inRandomOrder()->get();
+        $people = Person::where('published', 'published')->where('enneagram', '=', $enneagram->name)->limit(20)->inRandomOrder()->get();
         $title = 'All about '. $enneagram->name.', '.$enneagram->strength;
         $description = $title;
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Glhd\Gretel\Routing\ResourceBreadcrumbs;
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\TypologyController;
+use App\Http\Controllers\Admin\MBTIController;
 use App\Http\Controllers\Admin\PersonController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\PageController;
@@ -34,15 +34,15 @@ Route::middleware('role:Admin')->name('admin.')->prefix('/admin')->group(functio
         Route::delete('/', 'destroy')->name('delete');
     });
 
-    Route::name('typologies.')->prefix('/typologies')->controller(TypologyController::class)->group(function () {
+    Route::name('mbti.')->prefix('/mbti')->controller(MBTIController::class)->group(function () {
         Route::get('/', 'index')->name('index')
-            ->breadcrumb('Typologies', 'admin.index');
+            ->breadcrumb('MBTI', 'admin.index');
         Route::get('/create', 'create')->name('create')
             ->breadcrumb('Create', '.index');
-        Route::get('/{typology}/edit', 'edit')->name('edit')
+        Route::get('/{mbti}/edit', 'edit')->name('edit')
             ->breadcrumb('Edit', '.index');
         Route::post('/', 'store');
-        Route::patch('/{typology}', 'update')->name('update');
+        Route::patch('/{mbti}', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
     });
 

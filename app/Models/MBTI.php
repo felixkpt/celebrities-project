@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Typology extends Model
+class MBTI extends Model
 {
     use HasFactory;
+    
+    protected $table = 'typologies';
     
     protected $fillable = [ 'name',
                             'slug',

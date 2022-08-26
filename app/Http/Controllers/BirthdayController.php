@@ -24,7 +24,7 @@ class BirthdayController extends Controller
      * The year method for displaying the people born by year
      */
     public function year($year) {
-        $people = Person::where('dob', 'regexp', '^'.$year.'-')->paginate($this->perPage);
+        $people = Person::where('published', 'published')->where('dob', 'regexp', '^'.$year.'-')->paginate($this->perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
@@ -35,7 +35,7 @@ class BirthdayController extends Controller
      * The year method for displaying the people born by year
      */
     public function yearMonth($year, $month) {
-        $people = Person::where([['dob', 'regexp', '^'.$year.'-'], ['birth_month', $month]])->paginate($this->perPage);
+        $people = Person::where('published', 'published')->where([['dob', 'regexp', '^'.$year.'-'], ['birth_month', $month]])->paginate($this->perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
@@ -48,7 +48,7 @@ class BirthdayController extends Controller
      * The month method for displaying the people born by month
      */
     public function month($month) {
-        $people = Person::where([['birth_month', $month]])->paginate($this->perPage);
+        $people = Person::where('published', 'published')->where([['birth_month', $month]])->paginate($this->perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
@@ -62,7 +62,7 @@ class BirthdayController extends Controller
      * The day method for displaying the people born by day
      */
     public function day($day) {
-        $people = Person::where([['birth_day', $day]])->paginate($this->perPage);
+        $people = Person::where('published', 'published')->where([['birth_day', $day]])->paginate($this->perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
@@ -76,7 +76,7 @@ class BirthdayController extends Controller
      * The monthday method for displaying the people born by month and day
      */
     public function monthDay($month, $day) {
-        $people = Person::where([['birth_month', $month], ['birth_day', $day]])->paginate($this->perPage);
+        $people = Person::where('published', 'published')->where([['birth_month', $month], ['birth_day', $day]])->paginate($this->perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
@@ -89,7 +89,7 @@ class BirthdayController extends Controller
      * The monthday method for displaying the people born by month and day
      */
     public function yearMonthDay($year, $month, $day) {
-        $people = Person::where([['dob', 'regexp', '^'.$year.'-'], ['birth_month', $month], ['birth_day', $day]])->paginate($this->perPage);
+        $people = Person::where('published', 'published')->where([['dob', 'regexp', '^'.$year.'-'], ['birth_month', $month], ['birth_day', $day]])->paginate($this->perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }

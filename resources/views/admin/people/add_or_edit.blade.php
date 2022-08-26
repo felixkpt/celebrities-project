@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Country;
-use App\Models\Typology;
+use App\Models\MBTI;
 ?>
 <div class="py-12">
     <div class="max-w-full mx-auto sm:px-6 lg:px-8">
@@ -120,7 +120,7 @@ use App\Models\Typology;
                         ease-in-out
                         m-0
                         py-1">
-                            <?php foreach (Typology::all() as $typology) : ?>
+                            <?php foreach (MBTI::all() as $typology) : ?>
                                 <option value="{{ $typology->name }}" <?php if ((old('typology') ?: @$person->typology) == $typology->name) echo "selected"; ?>>{{ $typology->name }}</option>
                             <?php endforeach; ?>
                         </select>

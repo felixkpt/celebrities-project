@@ -10,7 +10,7 @@
                 <label for="vote" class="w-full block sm:inline bg-pink-200 rounded px-1 mb-1 sm:mb-0 sm:bg-white">Your vote</label>
                 <select name="vote" id="vote" style="padding: 0 30px;" class="rounded">
                     <option>--Select--</option>
-                    @foreach(App\Models\Typology::all() as $typology)
+                    @foreach(App\Models\MBTI::all() as $typology)
                     <option <?php if ($vote && $vote->vote == $typology->name) { echo 'selected'; } ?>>{{$typology->name }}</option>
                     @endforeach
                 </select>

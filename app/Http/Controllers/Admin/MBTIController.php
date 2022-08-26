@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Str;
-use App\Models\Typology;
+use App\Models\MBTI;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TypologyController extends Controller
+class MBTIController extends Controller
 {
-    protected $route = 'admin.typologies';
+    protected $route = 'admin.mbti';
     /**
      * @param string $image_rules
      */
@@ -21,8 +21,8 @@ class TypologyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $personalities = Typology::all();    
-        return view('admin/typologies/index', ['personalities' => $personalities]);
+        $personalities = MBTI::all();    
+        return view('admin/mbti/index', ['personalities' => $personalities]);
     }
 
 
@@ -33,10 +33,10 @@ class TypologyController extends Controller
      */
     public function create()
     {
-        if ( count(Typology::all()) > 16 ) {
+        if ( count(MBTI::all()) > 16 ) {
             return redirect()->route($this->route.'.index')->with('waring', 'The maximum number of 16 typologies already saved.');
         }
-        return view('admin/typologies/create', ['route' => preg_replace('#\.#', '/', $this->route), 'method' => 'post']);
+        return view('admin/mbti/create', ['route' => preg_replace('#\.#', '/', $this->route), 'method' => 'post']);
     }
 
     /**
@@ -72,7 +72,7 @@ class TypologyController extends Controller
             $values = array_merge($values, ['featured_image' => $path]);
         }
         
-        Typology::create($values);    
+        MBTI::create($values);    
         return redirect()->route($this->route.'.index')->with('success', 'Typology was created');
     }
 
@@ -95,8 +95,8 @@ class TypologyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $personality = Typology::find($id);
-        return view('admin/typologies/edit', ['personality' => $personality, 'route' => preg_replace('#\.#', '/', $this->route).'/'.$personality->id, 'method' => 'patch']);
+        $personality = MBTI::find($id);
+        return view('admin/mbti/edit', ['personality' => $personality, 'route' => preg_replace('#\.#', '/', $this->route).'/'.$personality->id, 'method' => 'patch']);
     }
 
     /**
@@ -136,7 +136,7 @@ class TypologyController extends Controller
             $values = array_merge($values, ['featured_image' => $path]);
           }
       
-        Typology::where('id', '=', $id)->update($values);    
+        MBTI::where('id', '=', $id)->update($values);    
         return redirect()->route($this->route.'.index')->with('success', 'Typology was updated');
     }
 
@@ -148,7 +148,7 @@ class TypologyController extends Controller
      */
     public function destroy(Request $request)
     {
-        Typology::find($request->get('id'))->delete();    
+        MBTI::find($request->get('id'))->delete();    
         return redirect()->back()->with('danger', 'Typology was daleted');
     }
 }

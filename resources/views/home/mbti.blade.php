@@ -1,8 +1,6 @@
 <?php
 
-use App\Models\Typology;
-
-$items = Typology::latest()->limit(9)->get();
+$items = App\Models\MBTI::latest()->limit(9)->get();
 
 $items_segments = [];
 $max_segments = 3;
@@ -47,7 +45,7 @@ if ($temp) {
                 $map = ['I' => 'Introverted', 'E' => 'Extroverted', 'S' => 'Sensing', 'N' => 'iNtuition', 'F' => 'Feeling', 'T' => 'Thinking', 'J' => 'Judging', 'P' => 'Perceiving'];
                 ?>
                 <div class="relative mx-auto">
-                    <a href="{{ url('typologies/'.$personality->slug) }}">
+                    <a href="{{ url('mbti/'.$personality->slug) }}">
 
                         <div class="image-wrapper-lg">
                             <img style="width: 300px;" class="rounded img-fadein" src="{{ asset($personality->featured_image) }}" alt="ISFP">

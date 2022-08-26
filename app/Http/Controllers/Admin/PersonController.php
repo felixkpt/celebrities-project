@@ -13,7 +13,7 @@ use App\Models\Country;
 use App\Models\Person;
 use App\Models\PersonContent;
 use App\Models\Professional;
-use App\Models\Typology;
+use App\Models\MBTI;
 use App\Models\User;
 use App\Models\Enneagram;
 use Exception;
@@ -87,17 +87,7 @@ class PersonController extends Controller
             })->orderBy('updated_at', 'desc')->paginate($this->perPage);
             $people->appends(['author' => $slug]);
             $title = 'All People by ' . $author->name . ' (' . $people->total() . ')';
-        } elseif ($slug = $request->get('category')) {
-            $category = Category::where('slug', $slug)->first();
-            if (!$category) {
-                return redirect()->back()->with('warning', 'Whoops! Category not found.');
-            }
-            $people = Person::whereHas('category', function ($q) use ($category) {
-                $q->where([['post_category.category_id', $category->id]]);
-            })->orderBy('updated_at', 'desc')->paginate($this->perPage);
-            $people->appends(['category' => $slug]);
-            $title = 'All People in the category ' . $category->name . ' (' . $people->total() . ')';
-        } else {
+        }else {
             $people = Person::with('authors')->orderBy('updated_at', 'desc')->paginate($this->perPage);
             $title = 'All People (' . Person::count() . ')';
         }
@@ -310,7 +300,7 @@ class PersonController extends Controller
             $bio = FamousSource::getMainInfo($crawler, $url);
 
             $bio['image'] = $images[0];
-            $typo = Typology::inRandomOrder()->first()->name;
+            $typo = MBTI::inRandomOrder()->first()->name;
             $bio['typology'] = $typo;
             $enneagram = Enneagram::inRandomOrder()->first()->name;
             $bio['enneagram'] = $enneagram;

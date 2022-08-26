@@ -34,13 +34,13 @@
                         <div id="dropdown{{ $key }}" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(352px, -12px);" data-popper-placement="top">
                             <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault{{ $key }}">
                                 <li>
-                                    <a href="{{ url('typologies/'.strtolower($personality->name)) }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">View</a>
+                                    <a href="{{ url('mbti/'.strtolower($personality->name)) }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">View</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('admin/typologies/'.$personality->id.'/edit') }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                    <a href="{{ url('admin/mbti/'.$personality->id.'/edit') }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                 </li>
                                 <li>
-                                    <form class="flex" action="{{ url('admin/typologies') }}" method="post">
+                                    <form class="flex" action="{{ url('admin/mbti') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="_method" value="delete">
                                     <input type="hidden" name="id" value="{{ $personality->id }}">
@@ -56,7 +56,7 @@
                 <tr>
                     <td colspan="5">
                         <div class="p-4 bg-gray-100 text-xl sm:text-3xl flex flex-col md:flex-row items-baseline">
-                        <span class="flex w-full md:w-2/3 p-1">Whoops! You have not pulished typologies yet! MBTI has 16 typologies.</span> <a class="flex w-full md:w-1/3 p-1 text-purple-500 text-lg sm:text-xl font-medium" href="{{ route('admin.typologies.create') }}">Start creating typologies now...</a>
+                        <span class="flex w-full md:w-2/3 p-1">Whoops! You have not pulished mbti yet! MBTI has 16 mbti.</span> <a class="flex w-full md:w-1/3 p-1 text-purple-500 text-lg sm:text-xl font-medium" href="{{ route('admin.mbti.create') }}">Start creating mbti now...</a>
                         </div>
                     </td>
                 </tr>
@@ -65,7 +65,7 @@
         </table>
         @if(count($personalities) < 16)
         <div class="block text-left ml-4 mt-4">
-            <a href="{{ route('admin.typologies.create') }}" class="text-white rounded py-2 px-4 mr-16 bg-cyan-500 hover:bg-cyan-600">Create a new</a>
+            <a href="{{ route('admin.mbti.create') }}" class="text-white rounded py-2 px-4 mr-16 bg-cyan-500 hover:bg-cyan-600">Create a new</a>
         </div>
         @endif
     </div>

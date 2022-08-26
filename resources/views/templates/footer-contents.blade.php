@@ -1,6 +1,6 @@
 <div class="flex flex-col overflow-x-hidden">
         <footer id="footer" class="mt-8">
-                <div class="px-6 my-2">
+                <div class="px-6 my-2 flex">
                         <a href="{{ url('/') }}">
                                 <img style="background-color: #f8f6f8;border-radius: 5%;padding: 1px 4px;" src="{{ url('logo.png') }}" alt="{{ \SiteInfo::name() }} logo">
                         </a>
@@ -39,13 +39,10 @@
                                 <h3 class="mb-6 text-sm font-semibold text-gray-300 uppercase">Legal</h3>
                                 <ul class="text-gray-300">
                                         <li class="mb-4">
-                                                <a href="#" class="hover:underline">Privacy Policy</a>
+                                                <a href="{{ url('pages/privacy-policy') }}" class="hover:underline">Privacy Policy</a>
                                         </li>
                                         <li class="mb-4">
-                                                <a href="#" class="hover:underline">Licensing</a>
-                                        </li>
-                                        <li class="mb-4">
-                                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                                                <a href="{{ url('pages/terms-and-conditions') }}" class="hover:underline">Terms &amp; Conditions</a>
                                         </li>
                                 </ul>
                         </div>

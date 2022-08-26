@@ -21,7 +21,7 @@ class CountryController extends Controller
         if (!$country) {
             return redirect()->back()->with('warning', 'Whoops! Not found.');
         }
-        $people = Person::where('country_code', '=', $country->code)->paginate($this->perPage);
+        $people = Person::where('published', 'published')->where('country_code', '=', $country->code)->paginate($this->perPage);
         if (count($people) < 1) {
             return redirect()->back()->with('warning', 'Whoops! No people.');
         }

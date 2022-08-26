@@ -1,5 +1,5 @@
 <?php 
-$sidebar_items = ['Posts' => 'admin/posts', 'People' => 'admin/people', 'MBTI Typo' => 'admin/typologies', 'Pages' => 'admin/pages', 'Categories' => 'admin/categories', 'Users' => 'admin/users', 'Media' => 'admin/media']
+$sidebar_items = ['Posts' => 'admin/posts', 'People' => 'admin/people', 'MBTI Typo' => 'admin/mbti', 'Pages' => 'admin/pages', 'Categories' => 'admin/categories', 'Users' => 'admin/users', 'Media' => 'admin/media']
 ?>
 <div class="h-screen overflow-y-auto" style="position:sticky;top: 37px;;width:210px">
     <div class="flex flex-col overflow-x-hidden h-screen py-2 px-1 justify-between">
